@@ -38,7 +38,7 @@ for j in img_list:
     COUNT = 1
     angle = [120, 240]
 
-	# 리스트 안의 이미지를 모두 읽어와 1도씩 회전합니다. 
+	# 리스트 안의 이미지를 모두 읽어와 i도씩 회전합니다. 
     for i in angle:
         image = Image.open(j)
         # 변환된 파일을 저장하기 위해 새로운 이름을 지정합니다.
