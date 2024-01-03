@@ -6,10 +6,6 @@ import time
 from PIL import Image
 import sys
 
-print("Process Start.")
-
-start_time = time.time()
-
 # 부풀릴 이미지 입력
 file = glob.glob('../2nd data(dec)/test/X22/*.jpg')
 img_list = natsort.natsorted(file)
@@ -58,5 +54,3 @@ for j in img_list:
             break
     print("Process Done.")
 
-end_time = time.time()
-print("The Job Took " + str(end_time - start_time) + " seconds.")
