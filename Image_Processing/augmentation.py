@@ -34,22 +34,22 @@ for j in img_list:
     COUNT = 1
     angle = [120, 240]
 
-	# 리스트 안의 이미지를 모두 읽어와 i도씩 회전합니다. 
+	# 리스트 안의 이미지를 모두 읽어와 i도씩 회전
     for i in angle:
         image = Image.open(j)
-        # 변환된 파일을 저장하기 위해 새로운 이름을 지정합니다.
+        # 변환된 파일을 저장하기 위해 새로운 이름 지정
         new_temp_name = "%05d_" % COUNT
-        # 사진이 한 장 만들어질때마다 count를 1씩 증가시킵니다.
+        # 사진이 한 장 만들어질때마다 count를 1씩 증가
         COUNT += 1
         # 사진을 회전시킵니다.
         image = image.rotate(i)
-        # 간혹 이미지 크기가 변경된다는 이야기가 있어 resize()를 실행합니다.
+        # 이미지 크기 맞추기 -> resize()
         image = image.resize((Xdim, Ydim))
-        # 회전 된 이미지를 저장합니다.
+        # 회전 된 이미지 저장
         image.save(path + new_temp_name + files)
         image.close()
-        # 깔끔하게 2장만 만듭시다.
-        # 결과물이 2개를 넘어서면 코드를 종료합니다.
+
+        # 결과물 2개 만들기, 더 만들고 싶다면 숫자 변경 요망
         if COUNT > 3:
             break
     print("Process Done.")
